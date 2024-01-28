@@ -13,7 +13,7 @@ spec:
   rules:
   # this is my personal domain
   # you can use your personal domain by adding A record of ingress-nginx-controller service's external ip
-  # to find external ip, eun `kubectl -n ingress-nginx get service`
+  # to find external ip, run `kubectl -n ingress-nginx get service`
   - host: test.petchblog.net
     http:
         paths:
