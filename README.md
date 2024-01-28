@@ -34,7 +34,12 @@ metadata:
 
 # HTTPS (optional)
 
-- Fill-in certificate and key in tls-secret.yaml and Apply into cluster
+- Prepare `tls.crt` and `tls.key` in certificates directory which should have been git-ignored
+
+- Create tls secret resource with certificate and key
+```
+kubectl create secret tls app-tls --cert=certificates/tls.crt --key=certificates/tls.key
+```
 
 - Add tls in ingress 
 ```
@@ -42,5 +47,5 @@ spec:
   tls:
   - hosts:
     - example.com
-    secretName: ingress-nginx-tls
+    secretName: app-tls
 ```
